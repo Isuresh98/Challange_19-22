@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 708121301}
   m_Layer: 0
   m_Name: object
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 797660253}
   m_Layer: 0
   m_Name: object
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 1006776166}
   m_Layer: 0
   m_Name: object
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -568,7 +568,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1608276090
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -671,7 +671,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8e4a3dcf14c62f448fcbdc50038d289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 6
+  _jumpForce: 200
+  isGrounded: 0
 --- !u!1 &1721241304
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,7 +687,7 @@ GameObject:
   - component: {fileID: 1721241305}
   m_Layer: 0
   m_Name: object
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -793,7 +795,7 @@ GameObject:
   - component: {fileID: 2010590563}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
