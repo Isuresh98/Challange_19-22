@@ -143,6 +143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8e4a3dcf14c62f448fcbdc50038d289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  _jumpForce: 200
   isGrounded: 0
+  _srender: {fileID: 0}
+  speed: 6
+  _jumpForce: 250
+  ScoreCount: 0
+  _bulatPrefabs: {fileID: 8045618561413403501, guid: 9372091413971ac49aec348db60864a2,
+    type: 3}

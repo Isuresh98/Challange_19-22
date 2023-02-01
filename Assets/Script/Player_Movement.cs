@@ -51,6 +51,16 @@ public class Player_Movement : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (collision.gameObject.CompareTag("DounGround"))
+        {
+            isGrounded = true;
+            Rigidbody2D DounGroundRB = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (DounGroundRB != null)
+            {
+                DounGroundRB.bodyType = RigidbodyType2D.Dynamic;
+            }
+        }
+
         if (collision.gameObject.CompareTag("Enemy"))
         {
             ScoreCount += 5;
@@ -65,6 +75,9 @@ public class Player_Movement : MonoBehaviour
         {
             isGrounded = false;
         }
+        
+
+
     }//OnCollisionExit2D
 
     void Shoot()
