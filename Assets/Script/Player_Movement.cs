@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
+    public bool isGrounded;
+    private Rigidbody2D rbody;
+    [SerializeField] SpriteRenderer _srender; 
+
     [SerializeField] float speed = 10f;
     [SerializeField] float _jumpForce = 10f;
-    private Rigidbody2D rbody;
-    public bool isGrounded;
+    [SerializeField]private int ScoreCount;
     // Start is called before the first frame update
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
+        _srender = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -20,8 +24,6 @@ public class Player_Movement : MonoBehaviour
         
         Movement();
         Jump();
-         
-       
     }
 
     private void Movement()
@@ -40,20 +42,26 @@ public class Player_Movement : MonoBehaviour
         {
             rbody.velocity = Vector2.up * _jumpForce * Time.deltaTime;
         }
-    }
+    }//Jump
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
         }
-        
-    }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            ScoreCount += 5;
+            Destroy(collision.gameObject);
+            _srender.color = Color.grey;
+        }
+
+    }//OnCollisionEnter2D
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
         }
-    }
+    }//OnCollisionExit2D
 }
