@@ -11,6 +11,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] float speed = 10f;
     [SerializeField] float _jumpForce = 10f;
     [SerializeField]private int ScoreCount;
+    [SerializeField] private GameObject _bulatPrefabs;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class Player_Movement : MonoBehaviour
         
         Movement();
         Jump();
+        Shoot();
     }
 
     private void Movement()
@@ -64,4 +66,12 @@ public class Player_Movement : MonoBehaviour
             isGrounded = false;
         }
     }//OnCollisionExit2D
+
+    void Shoot()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Instantiate(_bulatPrefabs, transform.position, Quaternion.identity);
+        }
+    }
 }
